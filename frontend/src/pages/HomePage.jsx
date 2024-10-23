@@ -3,7 +3,8 @@ import { WebsiteName, mainDomain } from "../assets/config.jsx";
 import { copy } from "../assets/icons/Icons";
 import axios from "axios";
 
-axios.defaults.baseURL = "http://localhost:4001/";
+axios.defaults.baseURL = "https://short-url-five-eta.vercel.app/";
+// axios.defaults.baseURL = "http://localhost:4001/";
 
 function HomePage() {
   const [shortUrl, setShortUrl] = useState("");
