@@ -8,14 +8,14 @@ function VerticleNavbar() {
       <div className="verticalNav w-[10vw] bg-[#194064] text-white h-[100%] ">
         <div className="createLink p-3">
           <button className="m-5 mb-4 ml-2">
-            <a href="/createlink" className=" ">
+            <Link to="/createlink" className=" ">
               <span className="block sm:hidden ">
                 <img src={add} alt="create link button" />
               </span>
               <span className="hidden sm:block p-3 text-xl rounded-xl text-white bg-blue-500 hover:bg-blue-700">
                 Create Link
               </span>
-            </a>
+            </Link>
           </button>
         </div>
         <hr />
