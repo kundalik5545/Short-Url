@@ -27,13 +27,44 @@ function HomePage() {
 
   //To Post url
   const handleOnClick = async (e) => {
-    e.preventDefault();
-    const data = await axios.post("/url", formData);
-    console.log(data);
+    // e.preventDefault();
+    // const data = await axios.post("/url", formData);
+    // console.log(data);
+    // if (data.data.success) {
+    //   alert(data.data.message);
+    //   setShortUrl(`${mainDomain}${data.data.data.shortUrl}`);
+    // }
 
-    if (data.data.success) {
-      alert(data.data.message);
-      setShortUrl(`${mainDomain}${data.data.data.shortUrl}`);
+    try {
+      // Convert form data to URL-encoded format
+      const urlEncodedData = new URLSearchParams();
+      urlEncodedData.append("userId", formData.userId);
+      urlEncodedData.append("originalUrl", formData.originalUrl);
+
+      // Send the URL-encoded form data to the backend API
+      const response = await axios.post("/url", urlEncodedData, {
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+      });
+
+      //  console.log(response.data);
+
+      // Check if the response indicates success
+      if (response.data.success) {
+        alert(response.data.message);
+
+        // Assuming mainDomain is defined somewhere, append the short URL
+        setShortUrl(`${mainDomain}${response.data.data.shortUrl}`);
+      } else {
+        // Handle the case where success is false (optional)
+        //  console.error("Error: ", response.data.message);
+        alert("Failed to shorten the URL.");
+      }
+    } catch (error) {
+      // Handle errors that occur during the request
+      //  console.error("Error:", error);
+      alert("An error occurred while trying to shorten the URL.");
     }
   };
 
