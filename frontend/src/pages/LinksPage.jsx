@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 const mainUrl = import.meta.env.VITE_API_URL;
 axios.defaults.baseURL = import.meta.env.VITE_API_URL;
-// axios.defaults.baseURL = "http://localhost:4001/";
 
 function LinksPage() {
   const [data, setData] = useState([]); // Changed from "" to an empty array assuming you're expecting multiple URLs
