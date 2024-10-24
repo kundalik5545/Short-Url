@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-axios.defaults.baseURL = "https://short-url-five-eta.vercel.app/";
+axios.defaults.baseURL = import.meta.env.VITE_API_URL;
 // axios.defaults.baseURL = "http://localhost:4001/";
 
 function LinksPage() {

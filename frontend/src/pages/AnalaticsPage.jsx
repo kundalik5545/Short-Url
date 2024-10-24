@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-// import axios from "axios";
+import axios from "axios";
 
-// axios.defaults.baseURL = "http://localhost:4001/";
+axios.defaults.baseURL = import.meta.env.VITE_API_URL;
 
 function AnalyticsPage() {
   const [data, setData] = useState([]); // Changed from "" to an empty array assuming you're expecting multiple URLs
