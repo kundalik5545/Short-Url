@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, Link } from "react";
 import { home, link, chart, setting, add } from "../assets/icons/Icons";
 
 function VerticleNavbar() {
@@ -20,30 +20,30 @@ function VerticleNavbar() {
         <hr />
         <div className="flex flex-col mt-2">
           <button className="bg-blue-500 mb-2">
-            <a href="/" className="flex p-3">
+            <Link to="/" className="flex p-3">
               <span className="mx-2">
                 <img src={home} alt="" />
               </span>
               <span className="mx-1 d-none d-sm-inline">Home</span>
-            </a>
+            </Link>
           </button>
 
           <button className=" bg-blue-500 mb-2">
-            <a href="/link" className="flex p-3 ">
+            <Link to="/link" className="flex p-3 ">
               <span className="mx-2 ">
                 <img src={link} alt="" className=" d-inline  " />
               </span>
               <span className="mx-1 d-none d-sm-inline">Link</span>
-            </a>
+            </Link>
           </button>
 
           <button className=" bg-blue-500 mb-2">
-            <a href="/analytics" className="flex p-3">
+            <Link to="/analytics" className="flex p-3">
               <span className="mx-2">
                 <img src={chart} alt="" />
               </span>
               <span className="mx-1 d-none d-sm-inline">Analytics</span>
-            </a>
+            </Link>
           </button>
         </div>
 
