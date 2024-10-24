@@ -26,7 +26,7 @@ function HomePage() {
   console.log(formData);
 
   //To Post url
-  const handleOnClick = async (e) => {
+  const handleOnSubmit = async (e) => {
     e.preventDefault();
     const data = await axios.post("/url", formData);
     console.log(data);
@@ -110,7 +110,7 @@ function HomePage() {
         <p className="text-xl font-mono mx-1 pt-4 ">Create your URL Here...</p>
 
         <div className="urlShortner w-[600px]">
-          <form onSubmit={handleOnClick}>
+          <form onSubmit={handleOnSubmit}>
             <div className="form-group flex items-center gap-4 justify-between ">
               <label htmlFor="userId" className="text-lg font-mono w-full">
                 User ID:
@@ -138,7 +138,10 @@ function HomePage() {
                 onChange={handleOnChange}
               />
             </div>
-            <button className="text-white bg-blue-500 p-3 m-2 rounded-md">
+            <button
+              className="text-white bg-blue-500 p-3 m-2 rounded-md"
+              type="submit"
+            >
               Short URL
             </button>
           </form>
