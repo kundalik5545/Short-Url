@@ -238,7 +238,7 @@ function HomePage() {
         <p className="text-xl font-mono mx-1 pt-4">Create your URL Here...</p>
 
         <div className="urlShortner w-[600px]">
-          <form onSubmit={handleOnSubmit}>
+          <form>
             <div className="form-group flex items-center gap-4 justify-between">
               <label htmlFor="userId" className="text-lg font-mono w-full">
                 User ID:
@@ -271,6 +271,7 @@ function HomePage() {
             <button
               className="text-white bg-blue-500 p-3 m-2 rounded-md"
               type="submit"
+              onClick={handleOnSubmit}
             >
               Short URL
             </button>
