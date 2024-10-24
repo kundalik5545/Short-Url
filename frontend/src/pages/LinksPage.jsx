@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
+const mainUrl = import.meta.env.VITE_API_URL;
 axios.defaults.baseURL = import.meta.env.VITE_API_URL;
 // axios.defaults.baseURL = "http://localhost:4001/";
 
@@ -36,7 +36,7 @@ function LinksPage() {
               <h3 className="text-lg text-blue-600 font-semibold">
                 User ID: {url.userId}
               </h3>
-              <p>Short URL: {`http://localhost:4001/${url.shortUrl}`}</p>
+              <p>Short URL: {`${mainUrl}${url.shortUrl}`}</p>
               <p>Original URL: {url.originalUrl}</p>
               {/* Add more fields depending on your data structure */}
             </div>
